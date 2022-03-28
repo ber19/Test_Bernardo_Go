@@ -7,7 +7,7 @@ import (
 	"fyne.io/fyne/widget"
 )
 
-func updateTime(clock *widget.Label, clockP *widget.Label, wait time.Duration, worker worker, ch chan channel) {
+func updateTime(clock *widget.Label, clockP *widget.Label, worker worker, ch chan channel) {
 	for range time.Tick(time.Second) {
 		select {
 		case <-ch:

@@ -2,7 +2,6 @@ package worker
 
 import (
 	"fmt"
-	"time"
 
 	"fyne.io/fyne"
 	"fyne.io/fyne/widget"
@@ -26,7 +25,7 @@ func (worker *worker) start(appp fyne.App, ch chan channel, parent fyne.Window) 
 	clockP := widget.NewLabel("")
 	w.SetContent(clock)
 	// parent.SetContent(clockP)
-	go updateTime(clock, clockP, time.Duration(0) * time.Second, *worker, ch)
+	go updateTime(clock, clockP, *worker, ch)
 	go printCount(*worker, ch)
 	w.SetCloseIntercept(func(){
 		close(ch)
