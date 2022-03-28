@@ -3,7 +3,6 @@ package main
 import (
 	worker "bernardo/test/src"
 	"fmt"
-	"time"
 
 	"fyne.io/fyne"
 	"fyne.io/fyne/app"
@@ -22,5 +21,4 @@ func main() {
 	w.Show()
 	app.Run()
 	fmt.Println("Proceso finalizado")
-	time.Sleep(5 * time.Second)
 }
